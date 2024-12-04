@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "fitpay": {
+      "type": "custom",
+      "main": "src/index.ts",
+      "candid": "src/fitpay.did",
+      "candid_gen": "http",
+      "build": "npx azle fitpay",
+      "wasm": ".azle/fitpay/fitpay.wasm",
+      "gzip": true,
+      "metadata": [
+        {
+          "name": "candid:service",
+          "path": "src/fitpay.did"
+        },
+        {
+          "name": "cdk:name",
+          "content": "azle"
+        }
+      ]
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": ["https://ic0.app"]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
